@@ -1,0 +1,203 @@
+<!doctype html>
+
+<html lang="en-us">
+
+<head>
+  <title>Seeing the forest for the trees: A more disciplined approach for AI - David Haber</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="David Haber - Founder &amp; software engineer based in Zurich, Switzerland. Building safe artificial intelligence (AI) and machine learning (ML) for healthcare, finance, and transportation. Previously Daedalean (DDLN), Soma Analytics and Deutsche Bank. Co-founder of Cognitir, an education startup for business and finance professionals." />
+<meta name="author" content="David Haber" /><meta property="og:title" content="Seeing the forest for the trees: A more disciplined approach for AI" />
+<meta property="og:description" content="Data-driven decision-making systems in production today exhibit serious conceptual flaws. Deployed as part of high-stakes applications, they not only risk to compromise individual safety and a company&rsquo;s financial performance but threaten economic and political stability at scale." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://david-haber.github.io/posts/ai-discipline/" />
+<meta property="og:image" content="https://david-haber.github.io/images/crashtest.jpg" />
+<meta property="article:published_time" content="2021-01-05T10:00:00+01:00" />
+<meta property="article:modified_time" content="2021-01-05T10:00:00+01:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://david-haber.github.io/images/crashtest.jpg"/>
+
+<meta name="twitter:title" content="Seeing the forest for the trees: A more disciplined approach for AI"/>
+<meta name="twitter:description" content="Data-driven decision-making systems in production today exhibit serious conceptual flaws. Deployed as part of high-stakes applications, they not only risk to compromise individual safety and a company&rsquo;s financial performance but threaten economic and political stability at scale."/>
+
+<meta name="generator" content="Hugo 0.79.0" />
+    
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://david-haber.github.io/fontawesome/css/all.min.css" />
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://david-haber.github.io/css/styles-light.css" />
+  </head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://david-haber.github.io/">David Haber</a>
+            </h1>
+
+      <ul id="social-media">
+             <li>
+               <a href="https://twitter.com/davhab" target="_blank" title="Twitter">
+               <i class="fab fa-twitter fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://linkedin.com/in/haberdavid" target="_blank" title="LinkedIn">
+               <i class="fab fa-linkedin fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://www.strava.com/athletes/12316933" target="_blank" title="Strava">
+               <i class="fab fa-strava fa-lg"></i>
+               </a>
+             </li>
+      </ul>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+    </ul>
+</nav>
+
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Seeing the forest for the trees: A more disciplined approach for AI</h1>
+
+    
+      <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2021-01-05T10:00:00&#43;01:00">Jan 5, 2021</time>
+        </li>
+        
+        
+
+        
+
+        <li>6 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    <p>Data-driven decision-making systems in production today exhibit serious conceptual flaws. Deployed as part of high-stakes applications, they not only risk to compromise individual safety and a company&rsquo;s financial performance but threaten economic and political stability at scale.</p>
+<p>To achieve reliable performance of AI in the real world, we need to shift the focus from the development of <em>ML models</em> towards a more systematic discipline to create fail-safe <em>systems</em> and <em>life cycles</em>.</p>
+<figure class="mid">
+    <img src="https://david-haber.github.io/images/crashtest.jpg"
+         alt="Cars go through rigorous stress testing as part of the normal development workflow. Fail-safe engineering is still underdeveloped in AI compared to more conventional technologies used in transportation, healthcare, finance or other industries. - Photo: Mercedes-Benz"/> <figcaption>
+            <p>Cars go through rigorous stress testing as part of the normal development workflow. Fail-safe engineering is still underdeveloped in AI compared to more conventional technologies used in transportation, healthcare, finance or other industries. - Photo: Mercedes-Benz</p>
+        </figcaption>
+</figure>
+
+<p>While many still argue that AI&rsquo;s impact has been modest, the importance to address this now becomes clear if we look at the air balls that we already managed to throw.</p>
+<p>In the midst of recent wildfires in the US, one of Google&rsquo;s algorithms recommended outdoor exercise to people<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, exposing their respiratory systems to harmful amounts of smoke and putting their health at severe risk. While the company might have acted in good faith (exercise is good after all!), they didn&rsquo;t take into account that a wildfire event would invalidate their data and an otherwise correct recommendation. The real world is always full of surprises.</p>
+<p>In 2019, the Wall Street Journal reported that a group of researchers found racial bias in a hospital algorithm which meant that black patients were less likely to receive the medical help they needed than white patients<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. The reasons, it was explained, included that the algorithm would rank patients according to healthcare costs and the fact that &ldquo;health-care spending for black patients was less than for white patients with similar medical conditions&rdquo;. With better transparency, this issue would have been found more quickly, likely before deployment.</p>
+<p>During the current pandemic, headline news claim that AI imaging systems can detect COVID-19 from chest x-rays. While this is all early work, a team at the University of Washington showed that the methodology in building those systems was terribly flawed. The models–which had been reported to have astounding accuracies in the first place–seem to have learned &ldquo;spurious shortcuts&rdquo; and imaging artifacts rather than medical pathology<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. As one of the consequences, physically moving the patient up in the x-ray &ldquo;increased the model&rsquo;s predicted odds that the patient has COVID-19&rdquo;. It&rsquo;s a beautiful–and alarming–illustration of the gap between news headlines, early prototypes and the complexities of operating these in hospital rooms.</p>
+<p>Clinical decision-making systems recommend procedures and drug treatments to doctors and patients every day. The cost of poor decision-making often only becomes apparent when we do the math at scale. While false predictions could pose small risks at an individual level, we forget that they needlessly harm a number of human beings every day when decision-making systems are deployed and used at scale - across offices, hospitals, and countries.</p>
+<p>At the same time, academic AI papers claim to outperform humans in a fascinating race to beat state-of-the-art performances. Yet, it is clear to all that our machine learning (ML) models which work well in a Jupyter notebook<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>, perform less impressively in the real world. A set of metrics, ground truth and predictions is all that is needed to arrive at the &ldquo;my system works well on the test set&rdquo; conclusion. While there is nothing wrong with that, the problem is that–despite being neither a complete nor a sound assessment–we erroneously extrapolate that performance to complex, dynamic and real-world environments all too often.</p>
+<blockquote>
+<p>ML code is only a small part of the solution.
+— <!-- raw HTML omitted -->Andrew Ng, Co-founder of Coursera and Adjunct Professor at Stanford University<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup><!-- raw HTML omitted --></p>
+</blockquote>
+<p>The truth is that the development of <em>complete AI systems</em> is extremely challenging and the organizational effort required to drive such projects to completion is orders of magnitude higher than developing proof-of-concept or prototype <em>models</em>. Especially as the challenges of real-world AI transcend data science and code. Complete systems need to be analyzed in the context of the intended application, how they interact with and are influenced by their environment and any hardware that is used. Failure situations need to be examined through <em>failure mode and effects analyses</em><sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> and influence the design and procedures which are used during development and operation. Finally, these systems will be used by humans with different backgrounds, skills, and their own individual ways of interacting with technology. As a consequence, AI development requires great care in the design of human-computer interfaces and the consideration of human factors<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>. It is a cross-disciplinary effort that needs to involve multiple stakeholders and domain expertise to truly understand the end user we want to serve.</p>
+<p>What is the result of this? Businesses around the world struggle to realize a return on their AI investments - too many projects and even entire companies are stuck in the &ldquo;pilot trap&rdquo;.</p>
+<p>Having gone through the development of complex, physical AI systems with strict safety guarantees ourselves, we understand the challenges and the need to rethink our strategies to develop real-world AI systems. This is particularly true in the context of evolving regulatory standards which will create additional pressure for AI developers and companies in all major industries over the next few years. But it is also relevant beyond regulations - for anyone looking to realize the impact that AI has long been promising.</p>
+<p>So, what does it take? We need to better understand how to design, develop and operate AI from a system&rsquo;s perspective. Reasoning about systems rather than models opens the toolboxes that safety and systems engineers have been using to build robust systems for decades. We have the tools. What&rsquo;s missing is our own toolbox.</p>
+<blockquote>
+<p>The building blocks are in place, the principles for putting these blocks together are not, and so the blocks are currently being put together in ad-hoc ways&hellip;What we&rsquo;re missing is an engineering discipline with principles of analysis and design.
+— <!-- raw HTML omitted -->Michael Jordan, Professor at the University of California, Berkeley<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup><!-- raw HTML omitted --></p>
+</blockquote>
+<p>A more disciplined approach to AI development would not only create better products but also enable completely new applications. It would help us achieve the small failure probabilities that healthcare, transportation, finance, and other industries require.</p>
+<p>Most importantly, it would help convert the AI term from an intellectual wildcard into something more fundamental, something that we can understand and reason about. Only then can we have meaningful discussions around safety, ethics, and regulations. Only then can we nudge AI projects out of the &ldquo;pilot trap&rdquo; and deploy them safely &amp; robustly in our complex world.</p>
+<p>What does this all mean for startups and corporations? How can they establish development life cycles, create AI products and structure their organizations? What does it mean for you? Bear with us! We will present some thoughts around these questions in future articles.</p>
+<p><em>Thanks to <a href="https://ruieduardo.com">Rui</a>, <a href="https://twitter.com/muellerfreitag">Moritz</a>, <a href="https://www.linkedin.com/in/matthias-kraft-5b1229a1/">Matthias</a>, <a href="https://www.linkedin.com/in/mateor/">Mateo</a>, <a href="https://www.linkedin.com/in/annalipkina10/">Anna</a> and Andy for reading drafts of this article, providing feedback and discussing with me how to build better AI.</em></p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://www.sacbee.com/news/california/fires/article216227775.html">How bad is Sacramento’s air, exactly? Google results appear at odds with reality, some say (The Sacramento Bee, 2018)</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><a href="https://www.wsj.com/articles/researchers-find-racial-bias-in-hospital-algorithm-11571941096">Researchers Find Racial Bias in Hospital Algorithm (The Wall Street Journal, 2019)</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p><a href="https://www.medrxiv.org/content/10.1101/2020.09.13.20193565v2.full.pdf">DeGrave, Alex J., Joseph D. Janizek, and Su-In Lee. &ldquo;AI for radiographic COVID-19 detection selects shortcuts over signal.&rdquo; medRxiv (2020).</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>A popular programming environment to run ML experiments, mostly at smaller scale. <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p><a href="https://www.youtube.com/watch?v=tsPuVAMaADY">Ng, Andrew. &ldquo;Bridging AI&rsquo;s Proof-of-Concept to Production Gap&rdquo; (2020)</a> <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6" role="doc-endnote">
+<p><a href="https://en.wikipedia.org/wiki/Failure_mode_and_effects_analysis">Wikipedia article: Failure mode and effects analysis</a> <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7" role="doc-endnote">
+<p>A term used by the European Union Aviation Safety Agency (EASA) to describe &ldquo;anything that affects human performance&rdquo;. <a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8" role="doc-endnote">
+<p><a href="https://hdsr.mitpress.mit.edu/pub/wot7mkc1/release/9">Jordan, Michael I. &ldquo;Artificial intelligence—the revolution hasn&rsquo;t happened yet.&rdquo; Harvard Data Science Review 1.1 (2019).</a> <a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        
+    </ul>
+</section>
+  
+    
+    
+  
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright © 2021 - David Haber |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://david-haber.github.ioindex.xml">Subscribe </a></h6>
+    </footer>
+</div>
+<script src="https://david-haber.github.io/js/scripts.js"></script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-167587983-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+
+</html>
+
