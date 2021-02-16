@@ -1,0 +1,183 @@
+<!doctype html>
+
+<html lang="en-us">
+
+<head>
+  <title>What Makes Building Safe AI So Hard? - David Haber</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="David Haber - Founder &amp; CEO of Lakera AI. Based in Zurich, Switzerland. Building safe artificial intelligence (AI) and machine learning (ML) for healthcare, finance, and transportation. Previously Daedalean (DDLN), Soma Analytics and Deutsche Bank. Founder of Cognitir, a technology education startup for business and finance professionals." />
+<meta name="author" content="David Haber" /><meta property="og:title" content="What Makes Building Safe AI So Hard?" />
+<meta property="og:description" content="AI systems have the same developmental and operational problems as traditional software, plus a vast set of AI-specific issues. It much more difficult to analyze AI behavior, let alone to demonstrate its safety." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://david-haber.github.io/posts/ai-challenges/" />
+<meta property="og:image" content="https://david-haber.github.io/images/aisafetyreqs.png" />
+<meta property="article:published_time" content="2021-02-16T08:00:00+01:00" />
+<meta property="article:modified_time" content="2021-02-16T08:00:00+01:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://david-haber.github.io/images/aisafetyreqs.png"/>
+
+<meta name="twitter:title" content="What Makes Building Safe AI So Hard?"/>
+<meta name="twitter:description" content="AI systems have the same developmental and operational problems as traditional software, plus a vast set of AI-specific issues. It much more difficult to analyze AI behavior, let alone to demonstrate its safety."/>
+
+<meta name="generator" content="Hugo 0.79.0" />
+    
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://david-haber.github.io/fontawesome/css/all.min.css" />
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://david-haber.github.io/css/styles-light.css" />
+  </head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://david-haber.github.io/">David Haber</a>
+            </h1>
+
+      <ul id="social-media">
+             <li>
+               <a href="https://twitter.com/davhab" target="_blank" title="Twitter">
+               <i class="fab fa-twitter fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://linkedin.com/in/haberdavid" target="_blank" title="LinkedIn">
+               <i class="fab fa-linkedin fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://www.strava.com/athletes/12316933" target="_blank" title="Strava">
+               <i class="fab fa-strava fa-lg"></i>
+               </a>
+             </li>
+      </ul>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+    </ul>
+</nav>
+
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>What Makes Building Safe AI So Hard?</h1>
+
+    
+      <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2021-02-16T08:00:00&#43;01:00">Feb 16, 2021</time>
+        </li>
+        
+        
+
+        
+
+        <li>5 minutes read</li>
+    </ul>
+</aside>
+
+    
+
+    <p>Creating a traditional computer program involves a fixed sequence of steps. First, we need to understand the problem and translate it into formal logic. Then, we implement that in code. Often surprisingly, the implementation of a program&rsquo;s logic is comparatively easy. The challenging part is understanding and translating the problem.</p>
+<p>The more complex systems become, the more brainpower we spend to understand them. It becomes necessary to distill the problem and its logic into components, which are easier to work with. Given an input to a component, we know which output to expect. Even before writing a single line of code, we formalize these expectations in <em>contracts</em>. These contracts describe how various components interact with each other. And ultimately, how the overall system interacts with the real world. Once the software is written, we can ensure that the contracts hold. This process makes the concept of failure transparent and clearly defined.</p>
+<p>This way, we have managed to build <em>extremely</em> safe software systems that can operate in real-world environments. For example, software autopilots for airplanes, which have been in use for half a century<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, don&rsquo;t fail even once in a billion flight hours. To put this in perspective, think about flying a Boeing 747 around Earth 22 million times<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. We don&rsquo;t expect it to fail once in that time! Flying is the safest mode of transport<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> for a good reason. It is designed with failure in mind.</p>
+<h2 id="the-new-era-of-machine-learning">The New Era of Machine Learning</h2>
+<p>But things have changed over the past decade. More recently, the idea of letting a computer learn program behavior with data has heralded a new era of <em>machine learning</em>. It is now one of the most powerful tools of our age.</p>
+<p>Machine learning can leverage statistical dependencies in data to learn complex input-output mappings. The program behavior is deduced from data. Therefore, we no longer need to distill the logic and implement it in code. Instead, the computer does so from data. We no longer have to translate the problem into formal logic. Instead, the computer does so from data. To some extent, we don&rsquo;t even have to understand the problem anymore – or at least we are fooled into believing that we don&rsquo;t.</p>
+<p>Through machine learning, a computer can learn behaviors that are much more complex than anything humans can describe with hand-written rules. On well-designed datasets, or sometimes even in well-controlled environments, we can now do things that we couldn&rsquo;t even imagine with traditional software.</p>
+<figure class="mid">
+    <img src="https://david-haber.github.io/images/aisafetyreqs.png"
+         alt="AI systems have all of the developmental and operational problems of traditional code, plus a vast additional set of AI-specific issues. AI software typically operates with more uncertainty, and it is challenging to demonstrate its safety and compliance."/> <figcaption>
+            <p>AI systems have all of the developmental and operational problems of traditional code, plus a vast additional set of AI-specific issues. AI software typically operates with more uncertainty, and it is challenging to demonstrate its safety and compliance.</p>
+        </figcaption>
+</figure>
+
+<p>Traditionally, we left the difficult parts – like understanding and translating the problem – to humans. We explicitly defined the behavior of traditional programs. Now machine learning solves this for us. It automatically distills the problem and its assumptions into a model. As a result, we can learn much more complicated program behaviors. But, at the same time, the understanding and behavioral guarantees of traditional software are lost. The contracts, which we previously relied on, no longer exist. This makes it much more difficult to analyze AI behavior, let alone to demonstrate its safety.</p>
+<h2 id="a-new-mindset-for-ai-development">A New Mindset for AI Development</h2>
+<p>AI systems have the same developmental and operational problems as traditional software, plus a vast set of AI-specific issues. As a result, <a href="https://david-haber.github.io/posts/ai-discipline/" target="_blank">companies can create impressive demos but fail to translate them into real products</a>. Or even worse, they operate AI software with a lot more uncertainty. This has already led to catastrophic consequences.</p>
+<p>Regulatory organizations, industry-specific working groups, and researchers are investigating how existing safety standards can be extended to cover the additional challenges of AI software. With decades of experience certifying traditional software, they know that safety <em>follows</em> from adopting a system-level view. Moreover, it requires a mindset that holds all stages of the development process accountable, from requirements collection to end-user interaction.</p>
+<p>AI development teams must adopt a similar top-down approach. Crucially, this means a development workflow that looks beyond the model. We need to systematically combine the best practices from traditional software with the tools specific to AI. Only then can we reestablish the contracts that traditional software relies on, reduce the uncertainty around AI applications, and achieve the failure rates that mission-critical applications require.</p>
+<p>With quickly evolving regulatory standards and improving machine learning tools, we now have a chance to get this right. Both sides of the table, regulators and industry, need to work together to create frameworks that support innovation, not stifle it.</p>
+<p><em>Thanks to <a href="https://www.linkedin.com/in/matthias-kraft-5b1229a1/" target="_blank">Matthias</a>, <a href="https://www.linkedin.com/in/mateor/" target="_blank">Mateo</a>, <a href="https://ruieduardo.com" target="_blank">Rui</a>, <a href="https://www.linkedin.com/in/annalipkina10/" target="_blank">Anna</a>, Alex and Ina for reading and commenting on drafts of this article.</em></p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a target="_blank" href="https://ntrs.nasa.gov/api/citations/19960016374/downloads/19960016374.pdf">Human-Centered Aviation
+Automation: Principles and Guidelines (Charles E. Billings, February 1996)</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Assuming that planet Earth has a circumference of roughly 40km, and a Boeing 747 has a cruise speed of around 900km/h, it takes us 45 hours to get around once, and so we need to repeat that roughly 22 million times to be airborne for a billion hours. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p><a target="_blank" href="https://www.iata.org/en/iata-repository/publications/economic-reports/flying-is-by-far-the-safest-form-of-transport/">IATA Economics' Chart of the Week (IATA, 23 February 2018)</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://david-haber.github.io/posts/ai-discipline/"><i class="fa fa-chevron-circle-left"></i> Seeing the forest for the trees: A more disciplined approach for AI</a>
+        </li>
+        
+        
+    </ul>
+</section>
+  
+    
+    
+  
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright © 2021 - David Haber |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://david-haber.github.io/index.xml">Subscribe </a></h6>
+    </footer>
+</div>
+<script src="https://david-haber.github.io/js/scripts.js"></script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-167587983-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+
+</html>
+
