@@ -90,7 +90,7 @@
 
         
 
-        <li>5 minutes read</li>
+        <li>5 minute read</li>
     </ul>
 </aside>
 
@@ -112,23 +112,44 @@
 
 <p>Traditionally, we left the difficult parts – like understanding and translating the problem – to humans. We explicitly defined the behavior of traditional programs. Now machine learning solves this for us. It automatically distills the problem and its assumptions into a model. As a result, we can learn much more complicated program behaviors. But, at the same time, the understanding and behavioral guarantees of traditional software are lost. The contracts, which we previously relied on, no longer exist. This makes it much more difficult to analyze AI behavior, let alone to demonstrate its safety.</p>
 <h2 id="a-new-mindset-for-ai-development">A New Mindset for AI Development</h2>
-<p>AI systems have the same developmental and operational problems as traditional software, plus a vast set of AI-specific issues. As a result, <a href="https://david-haber.github.io/posts/ai-discipline/">companies can create impressive demos but fail to translate them into real products</a>. Or even worse, they operate AI software with a lot more uncertainty. This has already led to catastrophic consequences.</p>
+<p>AI systems have the same developmental and operational problems as traditional software, plus a vast set of AI-specific issues. As a result, <a href="https://david-haber.github.io/posts/ai-discipline/" target="_blank">
+  companies can create impressive demos but fail to translate them into real products
+</a>
+. Or even worse, they operate AI software with a lot more uncertainty. This has already led to catastrophic consequences.</p>
 <p>Regulatory organizations, industry-specific working groups, and researchers are investigating how existing safety standards can be extended to cover the additional challenges of AI software. With decades of experience certifying traditional software, they know that safety <em>follows</em> from adopting a system-level view. Moreover, it requires a mindset that holds all stages of the development process accountable, from requirements collection to end-user interaction.</p>
 <p>AI development teams must adopt a similar top-down approach. Crucially, this means a development workflow that looks beyond the model. We need to systematically combine the best practices from traditional software with the tools specific to AI. Only then can we reestablish the contracts that traditional software relies on, reduce the uncertainty around AI applications, and achieve the failure rates that mission-critical applications require.</p>
 <p>With quickly evolving regulatory standards and improving machine learning tools, we now have a chance to get this right. Both sides of the table, regulators and industry, need to work together to create frameworks that support innovation, not stifle it.</p>
-<p><em>Thanks to <a href="https://www.linkedin.com/in/matthias-kraft-5b1229a1/">Matthias</a>, <a href="https://www.linkedin.com/in/mateor/">Mateo</a>, <a href="https://ruieduardo.com">Rui</a>, <a href="https://www.linkedin.com/in/annalipkina10/">Anna</a>, Alex and Ina for reading and commenting on drafts of this article.</em></p>
+<p><em>Thanks to <a href="https://www.linkedin.com/in/matthias-kraft-5b1229a1/" target="_blank">
+  Matthias
+</a>
+, <a href="https://www.linkedin.com/in/mateor/" target="_blank">
+  Mateo
+</a>
+, <a href="https://ruieduardo.com" target="_blank">
+  Rui
+</a>
+, <a href="https://www.linkedin.com/in/annalipkina10/" target="_blank">
+  Anna
+</a>
+, Alex and Ina for reading and commenting on drafts of this article.</em></p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p><a href="https://ntrs.nasa.gov/api/citations/19960016374/downloads/19960016374.pdf">Human-Centered Aviation
-Automation: Principles and Guidelines (Charles E. Billings, February 1996)</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a href="https://ntrs.nasa.gov/api/citations/19960016374/downloads/19960016374.pdf" target="_blank">
+  Human-Centered Aviation&lt;br&gt;
+Automation: Principles and Guidelines (Charles E. Billings, February 1996)
+</a>
+ <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
 <p>Assuming that planet Earth has a circumference of roughly 40km, and a Boeing 747 has a cruise speed of around 900km/h, it takes us 45 hours to get around once, and so we need to repeat that roughly 22 million times to be airborne for a billion hours. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p><a href="https://www.iata.org/en/iata-repository/publications/economic-reports/flying-is-by-far-the-safest-form-of-transport/">IATA Economics' Chart of the Week (IATA, 23 February 2018)</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a href="https://www.iata.org/en/iata-repository/publications/economic-reports/flying-is-by-far-the-safest-form-of-transport/" target="_blank">
+  IATA Economics&#39; Chart of the Week (IATA, 23 February 2018)
+</a>
+ <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -173,13 +194,15 @@ Automation: Principles and Guidelines (Charles E. Billings, February 1996)</a> <
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 	ga('create', 'UA-167587983-1', 'auto');
 	
 	ga('send', 'pageview');
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

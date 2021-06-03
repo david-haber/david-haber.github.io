@@ -90,7 +90,7 @@
 
         
 
-        <li>6 minutes read</li>
+        <li>6 minute read</li>
     </ul>
 </aside>
 
@@ -112,7 +112,7 @@
 <p>Clinical decision-making systems recommend procedures and drug treatments to doctors and patients every day. The cost of poor decision-making often only becomes apparent when we do the math at scale. While false predictions could pose small risks at an individual level, we forget that they needlessly harm a number of human beings every day when decision-making systems are deployed and used at scale - across offices, hospitals, and countries.</p>
 <p>At the same time, academic AI papers claim to outperform humans in a fascinating race to beat state-of-the-art performances. Yet, it is clear to all that our machine learning (ML) models which work well in a Jupyter notebook<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>, perform less impressively in the real world. A set of metrics, ground truth and predictions is all that is needed to arrive at the &ldquo;my system works well on the test set&rdquo; conclusion. While there is nothing wrong with that, the problem is that–despite being neither a complete nor a sound assessment–we erroneously extrapolate that performance to complex, dynamic and real-world environments all too often.</p>
 <blockquote>
-<p>ML code is only a small part of the solution.
+<p>ML code is only a small part of the solution.<br>
 — <!-- raw HTML omitted -->Andrew Ng, Co-founder of Coursera and Adjunct Professor at Stanford University<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup><!-- raw HTML omitted --></p>
 </blockquote>
 <p>The truth is that the development of <em>complete AI systems</em> is extremely challenging and the organizational effort required to drive such projects to completion is orders of magnitude higher than developing proof-of-concept or prototype <em>models</em>. Especially as the challenges of real-world AI transcend data science and code. Complete systems need to be analyzed in the context of the intended application, how they interact with and are influenced by their environment and any hardware that is used. Failure situations need to be examined through <em>failure mode and effects analyses</em><sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> and influence the design and procedures which are used during development and operation. Finally, these systems will be used by humans with different backgrounds, skills, and their own individual ways of interacting with technology. As a consequence, AI development requires great care in the design of human-computer interfaces and the consideration of human factors<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>. It is a cross-disciplinary effort that needs to involve multiple stakeholders and domain expertise to truly understand the end user we want to serve.</p>
@@ -120,39 +120,72 @@
 <p>Having gone through the development of complex, physical AI systems with strict safety guarantees ourselves, we understand the challenges and the need to rethink our strategies to develop real-world AI systems. This is particularly true in the context of evolving regulatory standards which will create additional pressure for AI developers and companies in all major industries over the next few years. But it is also relevant beyond regulations - for anyone looking to realize the impact that AI has long been promising.</p>
 <p>So, what does it take? We need to better understand how to design, develop and operate AI from a system&rsquo;s perspective. Reasoning about systems rather than models opens the toolboxes that safety and systems engineers have been using to build robust systems for decades. We have the tools. What&rsquo;s missing is our own toolbox.</p>
 <blockquote>
-<p>The building blocks are in place, the principles for putting these blocks together are not, and so the blocks are currently being put together in ad-hoc ways&hellip;What we&rsquo;re missing is an engineering discipline with principles of analysis and design.
+<p>The building blocks are in place, the principles for putting these blocks together are not, and so the blocks are currently being put together in ad-hoc ways&hellip;What we&rsquo;re missing is an engineering discipline with principles of analysis and design.<br>
 — <!-- raw HTML omitted -->Michael Jordan, Professor at the University of California, Berkeley<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup><!-- raw HTML omitted --></p>
 </blockquote>
 <p>A more disciplined approach to AI development would not only create better products but also enable completely new applications. It would help us achieve the small failure probabilities that healthcare, transportation, finance, and other industries require.</p>
 <p>Most importantly, it would help convert the AI term from an intellectual wildcard into something more fundamental, something that we can understand and reason about. Only then can we have meaningful discussions around safety, ethics, and regulations. Only then can we nudge AI projects out of the &ldquo;pilot trap&rdquo; and deploy them safely &amp; robustly in our complex world.</p>
 <p>What does this all mean for startups and corporations? How can they establish development life cycles, create AI products and structure their organizations? What does it mean for you? Bear with us! We will present some thoughts around these questions in future articles.</p>
-<p><em>Thanks to <a href="https://ruieduardo.com">Rui</a>, <a href="https://twitter.com/muellerfreitag">Moritz</a>, <a href="https://www.linkedin.com/in/matthias-kraft-5b1229a1/">Matthias</a>, <a href="https://www.linkedin.com/in/mateor/">Mateo</a>, <a href="https://www.linkedin.com/in/annalipkina10/">Anna</a> and Andy for reading drafts of this article, providing feedback and discussing with me how to build better AI.</em></p>
+<p><em>Thanks to <a href="https://ruieduardo.com" target="_blank">
+  Rui
+</a>
+, <a href="https://twitter.com/muellerfreitag" target="_blank">
+  Moritz
+</a>
+, <a href="https://www.linkedin.com/in/matthias-kraft-5b1229a1/" target="_blank">
+  Matthias
+</a>
+, <a href="https://www.linkedin.com/in/mateor/" target="_blank">
+  Mateo
+</a>
+, <a href="https://www.linkedin.com/in/annalipkina10/" target="_blank">
+  Anna
+</a>
+ and Andy for reading drafts of this article, providing feedback and discussing with me how to build better AI.</em></p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p><a href="https://www.sacbee.com/news/california/fires/article216227775.html">How bad is Sacramento’s air, exactly? Google results appear at odds with reality, some say (The Sacramento Bee, 2018)</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a href="https://www.sacbee.com/news/california/fires/article216227775.html" target="_blank">
+  How bad is Sacramento’s air, exactly? Google results appear at odds with reality, some say (The Sacramento Bee, 2018)
+</a>
+ <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p><a href="https://www.wsj.com/articles/researchers-find-racial-bias-in-hospital-algorithm-11571941096">Researchers Find Racial Bias in Hospital Algorithm (The Wall Street Journal, 2019)</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a href="https://www.wsj.com/articles/researchers-find-racial-bias-in-hospital-algorithm-11571941096" target="_blank">
+  Researchers Find Racial Bias in Hospital Algorithm (The Wall Street Journal, 2019)
+</a>
+ <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p><a href="https://www.medrxiv.org/content/10.1101/2020.09.13.20193565v2.full.pdf">DeGrave, Alex J., Joseph D. Janizek, and Su-In Lee. &ldquo;AI for radiographic COVID-19 detection selects shortcuts over signal.&rdquo; medRxiv (2020).</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a href="https://www.medrxiv.org/content/10.1101/2020.09.13.20193565v2.full.pdf" target="_blank">
+  DeGrave, Alex J., Joseph D. Janizek, and Su-In Lee. &amp;ldquo;AI for radiographic COVID-19 detection selects shortcuts over signal.&amp;rdquo; medRxiv (2020).
+</a>
+ <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4" role="doc-endnote">
 <p>A popular programming environment to run ML experiments, mostly at smaller scale. <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5" role="doc-endnote">
-<p><a href="https://www.youtube.com/watch?v=tsPuVAMaADY">Ng, Andrew. &ldquo;Bridging AI&rsquo;s Proof-of-Concept to Production Gap&rdquo; (2020)</a> <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a href="https://www.youtube.com/watch?v=tsPuVAMaADY" target="_blank">
+  Ng, Andrew. &amp;ldquo;Bridging AI&amp;rsquo;s Proof-of-Concept to Production Gap&amp;rdquo; (2020)
+</a>
+ <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:6" role="doc-endnote">
-<p><a href="https://en.wikipedia.org/wiki/Failure_mode_and_effects_analysis">Wikipedia article: Failure mode and effects analysis</a> <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Failure_mode_and_effects_analysis" target="_blank">
+  Wikipedia article: Failure mode and effects analysis
+</a>
+ <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:7" role="doc-endnote">
 <p>A term used by the European Union Aviation Safety Agency (EASA) to describe &ldquo;anything that affects human performance&rdquo;. <a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:8" role="doc-endnote">
-<p><a href="https://hdsr.mitpress.mit.edu/pub/wot7mkc1/release/9">Jordan, Michael I. &ldquo;Artificial intelligence—the revolution hasn&rsquo;t happened yet.&rdquo; Harvard Data Science Review 1.1 (2019).</a> <a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a href="https://hdsr.mitpress.mit.edu/pub/wot7mkc1/release/9" target="_blank">
+  Jordan, Michael I. &amp;ldquo;Artificial intelligence—the revolution hasn&amp;rsquo;t happened yet.&amp;rdquo; Harvard Data Science Review 1.1 (2019).
+</a>
+ <a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -193,13 +226,15 @@
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 	ga('create', 'UA-167587983-1', 'auto');
 	
 	ga('send', 'pageview');
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

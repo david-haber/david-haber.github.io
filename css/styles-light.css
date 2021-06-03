@@ -76,6 +76,10 @@ time {
   font-family: "Ruda", sans-serif;
 }
 
+#container nav a {
+  text-decoration: none;
+}
+
 #container nav ul {
   margin: 0;
   padding: 0;
@@ -263,8 +267,12 @@ width: 100%;
 }
 
 a {
-  color: #666666;
+  color: #999;
   text-decoration: none;
+}
+
+h1 > a, li > a {
+  color: #777;
 }
 
 .image, figure img, img {
